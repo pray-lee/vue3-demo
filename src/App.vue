@@ -9,6 +9,8 @@
       <router-link :to="{ name: 'about'}">About</router-link>
     </div>
     <router-view/>
+    <router-view name="email" class="email"/>
+    <router-view name="tel" class="tel"/>
   </div>
 </template>
 <style lang="stylus">
@@ -27,4 +29,6 @@
     color #2c3e50
     &.router-link-exact-active
       color #42b983
+.email
+  color: #ff5252
 </style>
