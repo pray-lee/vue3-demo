@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/images/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="handleClick">go son component with query</button>
   </div>
 </template>
 
@@ -13,6 +14,16 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  methods: {
+    handleClick () {
+      this.$router.push({
+        name: 'son',
+        query: {
+          name: 'hejianping'
+        }
+      })
+    }
   }
 }
 </script>
