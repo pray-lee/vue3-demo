@@ -1,4 +1,4 @@
-import Home from '../views/Home'
+import Home from '@/views/Home'
 export default [
   {
     path: '/',
@@ -8,9 +8,22 @@ export default [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('@/views/About.vue')
+  },
+  // 动态参数
+  {
+    path: '/detail/:id',
+    component: () => import( '@/views/Detail.vue' )
+  },
+  // 嵌套路由
+  {
+    path: '/parent',
+    component: () => import('@/views/parent.vue'),
+    children: [
+      {
+        path: 'son',
+        component: () => import('@/views/son.vue')
+      }
+    ]
   }
 ]
