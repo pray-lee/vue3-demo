@@ -70,5 +70,10 @@ export default [
         name: 'about'
       }
     }
+  },
+  // 如果没有匹配到以上任意一条，则跳转到404页面
+  {
+    path: '*',
+    component: () => import('@/views/error_404.vue')
   }
 ]
