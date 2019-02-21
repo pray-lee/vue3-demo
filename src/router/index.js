@@ -17,7 +17,7 @@ router.beforeEach((to, from, next) => {
   // 通过路由元信息的设置可以设置每一页的网页title
   to.meta && setTitle(to.meta.title)
 
-  alert('路由全局前置守卫触发')
+  // alert('路由全局前置守卫触发')
   if (to.name !== 'login'){
     if(HAS_LOGIN) next()
     else next({name: 'login'})
@@ -28,7 +28,7 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to, from) => {
-  alert('路由全局后置守卫触发')
+  // alert('路由全局后置守卫触发')
 })
 
 export default router

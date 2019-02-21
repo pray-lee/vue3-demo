@@ -9,7 +9,7 @@ export default [
     props: route => ({ type: route.query.type }),
     // 路由独享守卫
     beforeEnter: (to, from ,next) => {
-      alert('路由独享守卫触发---beforeEnter')
+      // alert('路由独享守卫触发---beforeEnter')
       next()
     },
   },
@@ -23,11 +23,11 @@ export default [
     },
     // 路由独享守卫
     beforeEnter: (to, from ,next) => {
-      alert('路由独享守卫触发---beforeEnter')
+      // alert('路由独享守卫触发---beforeEnter')
       if (from.name === 'home'){
-        alert('from home...')
+        // alert('from home...')
       } else {
-        alert('from other page...')
+        // alert('from other page...')
       }
       next()
     },
@@ -94,6 +94,16 @@ export default [
     path: '/login',
     name: 'login',
     component: () => import ('@/views/login.vue')
+  },
+  {
+    path: '/form',
+    name: 'form',
+    component: () => import('@/views/form')
+  },
+  {
+    path: '/store',
+    name: 'store',
+    component: () => import('@/views/store')
   },
   // 如果没有匹配到以上任意一条，则跳转到404页面
   {
