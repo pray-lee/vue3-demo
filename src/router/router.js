@@ -6,7 +6,12 @@ export default [
     alias: '/home_page', //路由别名, 一级路由注意前面的斜杠
     component: Home,
     // 路由传参（函数模式）--- 可以对传过来的参数做进一步处理, type这个名字就作为home组件里的props存在
-    props: route => ({ type: route.query.type })
+    props: route => ({ type: route.query.type }),
+    // 路由独享守卫
+    beforeEnter: (to, from ,next) => {
+      alert('路由独享守卫触发---beforeEnter')
+      next()
+    },
   },
   {
     path: '/about',
@@ -15,7 +20,17 @@ export default [
     // 路由传参（对象模式） --- 它会被按原样设置为组件属性。当 props 是静态的时候有用
     props: {
       content: '对象模式的路由传参, 是静态的.'
-    }
+    },
+    // 路由独享守卫
+    beforeEnter: (to, from ,next) => {
+      alert('路由独享守卫触发---beforeEnter')
+      if (from.name === 'home'){
+        alert('from home...')
+      } else {
+        alert('from other page...')
+      }
+      next()
+    },
   },
   // 动态参数
   {
@@ -70,6 +85,11 @@ export default [
         name: 'about'
       }
     }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import ('@/views/login.vue')
   },
   // 如果没有匹配到以上任意一条，则跳转到404页面
   {

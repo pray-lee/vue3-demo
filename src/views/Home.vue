@@ -23,6 +23,21 @@ export default {
   components: {
     HelloWorld
   },
+  // 组件内路由守卫
+  beforeRouteEnter (to, from, next) {
+    alert('这是组件内的beforeRouteEnter被触发')
+    console.log(to.name, from.name)
+    // 这个时候没有实例化，所以没有实例，要想使用实例，可以在next中添加回调函数
+    next(vm => {
+      console.log(vm)
+    })
+  },
+  beforeRouteLeave (to, from ,next) {
+    alert('这是组建内的beforeRouteLeave被触发')
+    const answer = confirm('您确定离开吗？')
+    if (answer) next()
+    else next(false)
+  },
   methods: {
     handleClick () {
       this.$router.push({
