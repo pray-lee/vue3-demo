@@ -60,6 +60,7 @@ export default [
   // 命名视图
   {
     path: '/namedView',
+    name: 'namedView',
     components: {
       default: () => import('@/views/Home.vue'),
       email: () => import('@/views/Email.vue'),
@@ -104,6 +105,11 @@ export default [
     path: '/store',
     name: 'store',
     component: () => import('@/views/store')
+  },
+  {
+    path: '/busTest',
+    name: 'busTest',
+    component: () => import('@/views/BusTest')
   },
   // 如果没有匹配到以上任意一条，则跳转到404页面
   {
