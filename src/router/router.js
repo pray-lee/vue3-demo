@@ -38,7 +38,11 @@ export default [
     name: 'detail',
     component: () => import( '@/views/Detail.vue' ),
     //路由传参（布尔模式）---- props设置为true ,在参数接收页面就不用$route.params.id接收参数了。直接使用props属性接收即可。见detail.vue文件
-    props: true
+    props: true,
+    // 路由元信息
+    meta: {
+      title: '详情页'
+    }
   },
   // 嵌套路由
   {
