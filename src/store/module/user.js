@@ -1,4 +1,6 @@
-const state = {}
+const state = {
+  username: 'leexiaoyong'
+}
 const actions = {}
 const mutations = {}
 
