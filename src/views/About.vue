@@ -42,7 +42,8 @@
         // this.$store.commit('SET_APP_NAME', '已经修改了')
 
         // user模块里面的mutations, actions, getters都会被暴露到全局,所以直接在mapMutations里面引入之后，直接像下面一样使用就可以了
-        this.SET_USER_NAME({changedName:'修改user里的username'})
+        // this.SET_USER_NAME({changedName:'修改user里的username'})
+        this.SET_USER_NAME('修改user里的username')
         this.SET_APP_NAME('已经修改了')
       }
     }

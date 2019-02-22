@@ -111,6 +111,11 @@ export default [
     name: 'busTest',
     component: () => import('@/views/BusTest')
   },
+  {
+    path: '/doAction',
+    name: 'doAction',
+    component:() => import('@/views/VuexTest')
+  },
   // 如果没有匹配到以上任意一条，则跳转到404页面
   {
     path: '*',
