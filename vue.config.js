@@ -1,7 +1,6 @@
 const path = require('path')
 
 const resolve = dir => path.join(__dirname, dir)
-
 const BASE_URL = process.env.NODE_ENV === 'production' ? '/vue3-demo/' : '/'
 module.exports = {
   lintOnSave: false,
@@ -14,6 +13,6 @@ module.exports = {
   // 打包不生成sourcemap
   productionSourceMap: false,
   devServer: {
-    proxy: 'http://localhost:8080'
+    proxy: 'http://127.0.0.1:3000'
   }
 }

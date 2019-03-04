@@ -30,7 +30,7 @@ export default [
         // alert('from other page...')
       }
       next()
-    },
+    }
   },
   // 动态参数
   {
@@ -120,5 +120,11 @@ export default [
   {
     path: '*',
     component: () => import('@/views/error_404.vue')
+  },
+  // 测试axios封装
+  {
+    path: '/axiosTest',
+    name: 'axiosTest',
+    component: () => import('@/views/sendRequest')
   }
 ]
