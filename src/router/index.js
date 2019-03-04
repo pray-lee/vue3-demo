@@ -6,11 +6,11 @@ import { setTitle } from '@/lib/util'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history' ,// 还有hash
+  mode: 'history', // 还有hash
   routes
 })
 
-//导航全局前置守卫, 一般都在index里配置
+// 导航全局前置守卫, 一般都在index里配置
 // 模拟登陆
 const HAS_LOGIN = true
 router.beforeEach((to, from, next) => {
@@ -18,11 +18,11 @@ router.beforeEach((to, from, next) => {
   to.meta && setTitle(to.meta.title)
 
   // alert('路由全局前置守卫触发')
-  if (to.name !== 'login'){
-    if(HAS_LOGIN) next()
-    else next({name: 'login'})
+  if (to.name !== 'login') {
+    if (HAS_LOGIN) next()
+    else next({ name: 'login' })
   } else {
-    if(HAS_LOGIN) next({name: 'home'})
+    if (HAS_LOGIN) next({ name: 'home' })
     else next()
   }
 })
