@@ -13,6 +13,7 @@ module.exports = {
   // 打包不生成sourcemap
   productionSourceMap: false,
   devServer: {
-    proxy: 'http://127.0.0.1:3000'
+    // 在 config/index里面设置了baseurl之后，这里就不用设置了，相当于不走这个proxy代理，直接走本地。如果这个写了代理的话，config/index里的开发环境就不用写了。
+    // proxy: 'http://localhost:3000'
   }
 }
