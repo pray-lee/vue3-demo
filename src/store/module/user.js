@@ -5,7 +5,7 @@ const getters = {
   changename: state => state.username + 'suwenli'
 }
 const actions = {
-  actionChangeUserName ({ commit }, params){
+  actionChangeUserName ({ commit }, params) {
     commit('SET_USER_NAME', params || '这是用action改的')
   }
 }
