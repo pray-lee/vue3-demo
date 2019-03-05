@@ -9,7 +9,7 @@ export default [
     props: route => ({ type: route.query.type }),
     // 路由独享守卫
     beforeEnter: (to, from, next) => {
-      alert('路由独享守卫触发---beforeEnter')
+      // alert('路由独享守卫触发---beforeEnter')
       next()
     }
   },
@@ -25,9 +25,9 @@ export default [
     beforeEnter: (to, from, next) => {
       alert('路由独享守卫触发---bforeEnter')
       if (from.name === 'home') {
-        alert('from home...')
+        // alert('from home...')
       } else {
-        alert('from other page...')
+        // alert('from other page...')
       }
       next()
     }
@@ -116,15 +116,27 @@ export default [
     name: 'doAction',
     component: () => import('@/views/VuexTest')
   },
-  // 如果没有匹配到以上任意一条，则跳转到404页面
-  {
-    path: '*',
-    component: () => import('@/views/error_404.vue')
-  },
   // 测试axios封装
   {
     path: '/axiosTest',
     name: 'axiosTest',
     component: () => import('@/views/sendRequest')
+  },
+  // slot count up ref learn
+  {
+    path: '/count-to',
+    name: 'countTo',
+    component: () => import('@/views/count-to')
+  },
+  //  可拖动面板
+  {
+    path: '/split-pane',
+    name: 'solitPane',
+    component: () => import('@/views/splitPane')
+  },
+  // 如果没有匹配到以上任意一条，则跳转到404页面
+  {
+    path: '*',
+    component: () => import('@/views/error_404.vue')
   }
 ]
