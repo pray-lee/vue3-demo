@@ -9,7 +9,7 @@ export default [
     props: route => ({ type: route.query.type }),
     // 路由独享守卫
     beforeEnter: (to, from, next) => {
-      // alert('路由独享守卫触发---beforeEnter')
+      alert('路由独享守卫触发---beforeEnter')
       next()
     }
   },
@@ -23,11 +23,11 @@ export default [
     },
     // 路由独享守卫
     beforeEnter: (to, from, next) => {
-      // alert('路由独享守卫触发---beforeEnter')
+      alert('路由独享守卫触发---bforeEnter')
       if (from.name === 'home') {
-        // alert('from home...')
+        alert('from home...')
       } else {
-        // alert('from other page...')
+        alert('from other page...')
       }
       next()
     }
